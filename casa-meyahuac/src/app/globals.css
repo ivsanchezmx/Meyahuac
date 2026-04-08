@@ -1,0 +1,186 @@
+@import "tailwindcss";
+
+/* ================================================================
+   CASA MEYAHUAC — DESIGN TOKENS
+   Mantenido por @ARIA + @VERA
+   ================================================================ */
+
+:root {
+  /* Color — la paleta sagrada */
+  --mey-black: #0a0a0a;
+  --mey-black-soft: #111111;
+  --mey-gold: #c9a84c;
+  --mey-gold-bright: #e0c061;
+  --mey-cream: #f5edd6;
+  --mey-cream-dim: #d6ceb6;
+  --mey-forest: #1a2f1e;
+  --mey-forest-deep: #0f1d12;
+  --mey-ruby: #8b1a1a;
+  --mey-orange: #c8631e;
+  --mey-banana: #d4b46a;
+
+  /* Fondos / superficies */
+  --background: var(--mey-black);
+  --foreground: var(--mey-cream);
+
+  /* Bordes y velos */
+  --mey-line: rgba(201, 168, 76, 0.18);
+  --mey-line-strong: rgba(201, 168, 76, 0.45);
+  --mey-veil: rgba(10, 10, 10, 0.72);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-mey-black: var(--mey-black);
+  --color-mey-black-soft: var(--mey-black-soft);
+  --color-mey-gold: var(--mey-gold);
+  --color-mey-gold-bright: var(--mey-gold-bright);
+  --color-mey-cream: var(--mey-cream);
+  --color-mey-cream-dim: var(--mey-cream-dim);
+  --color-mey-forest: var(--mey-forest);
+  --color-mey-forest-deep: var(--mey-forest-deep);
+  --color-mey-ruby: var(--mey-ruby);
+  --color-mey-orange: var(--mey-orange);
+  --color-mey-banana: var(--mey-banana);
+
+  --font-display: var(--font-display);
+  --font-sans: var(--font-sans);
+}
+
+html,
+body {
+  background: var(--mey-black);
+  color: var(--mey-cream);
+  font-family: var(--font-sans), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Textura de papel artesanal sutil aplicable como utilidad */
+.mey-paper {
+  background-image:
+    radial-gradient(rgba(201, 168, 76, 0.04) 1px, transparent 1px),
+    radial-gradient(rgba(245, 237, 214, 0.025) 1px, transparent 1px);
+  background-size: 24px 24px, 13px 13px;
+  background-position: 0 0, 7px 7px;
+}
+
+/* Velo radial dorado */
+.mey-vignette {
+  background:
+    radial-gradient(ellipse at center, transparent 40%, rgba(0, 0, 0, 0.7) 100%);
+}
+
+/* Líneas decorativas */
+.mey-divider {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: var(--mey-gold);
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+}
+.mey-divider::before,
+.mey-divider::after {
+  content: "";
+  width: 3rem;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    var(--mey-gold),
+    transparent
+  );
+}
+
+/* Tipografía display */
+.mey-display {
+  font-family: var(--font-display), Georgia, serif;
+  font-style: italic;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  line-height: 0.95;
+}
+
+/* Cursor personalizado: ocultamos el nativo en hover de elementos interactivos */
+@media (hover: hover) and (pointer: fine) {
+  body {
+    cursor: none;
+  }
+  a,
+  button,
+  [role="button"],
+  input,
+  textarea,
+  select {
+    cursor: none;
+  }
+}
+
+/* Scroll suave (respetando reduced motion) */
+html {
+  scroll-behavior: smooth;
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  * {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+/* Selección dorada */
+::selection {
+  background: var(--mey-gold);
+  color: var(--mey-black);
+}
+
+/* Scrollbar oscura discreta */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--mey-black);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(201, 168, 76, 0.25);
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(201, 168, 76, 0.5);
+}
+
+/* Animación: fade lento del hero */
+@keyframes meyFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.mey-fade-in {
+  animation: meyFadeIn 1.4s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* Resplandor dorado para botones */
+.mey-glow {
+  box-shadow:
+    0 0 0 1px rgba(201, 168, 76, 0.6),
+    0 0 24px -6px rgba(201, 168, 76, 0.45),
+    inset 0 0 0 1px rgba(245, 237, 214, 0.05);
+}
+.mey-glow:hover {
+  box-shadow:
+    0 0 0 1px rgba(224, 192, 97, 0.9),
+    0 0 36px -4px rgba(201, 168, 76, 0.7),
+    inset 0 0 0 1px rgba(245, 237, 214, 0.12);
+}

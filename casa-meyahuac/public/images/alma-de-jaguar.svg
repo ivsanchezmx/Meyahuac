@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 800" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="45%" r="65%">
+      <stop offset="0%" stop-color="#c9a84c" stop-opacity="0.45"/>
+      <stop offset="40%" stop-color="#1a2f1e" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#0a0a0a" stop-opacity="1"/>
+    </radialGradient>
+    <linearGradient id="bottle" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1a2f1e"/>
+      <stop offset="1" stop-color="#0a0a0a"/>
+    </linearGradient>
+    <linearGradient id="liquid" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#e0c061" stop-opacity="0.9"/>
+      <stop offset="1" stop-color="#8b6a14" stop-opacity="0.95"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="800" fill="#0a0a0a"/>
+  <rect width="600" height="800" fill="url(#bg)"/>
+  <!-- Bottle silhouette -->
+  <g transform="translate(300 410)">
+    <rect x="-22" y="-235" width="44" height="50" rx="3" fill="url(#bottle)" stroke="#c9a84c" stroke-opacity="0.5"/>
+    <path d="M -55 -185 Q -55 -150 -78 -110 Q -90 -80 -90 -40 L -90 200 Q -90 230 -60 230 L 60 230 Q 90 230 90 200 L 90 -40 Q 90 -80 78 -110 Q 55 -150 55 -185 Z" fill="url(#bottle)" stroke="#c9a84c" stroke-opacity="0.55" stroke-width="1"/>
+    <path d="M -78 -10 L -78 195 Q -78 215 -60 215 L 60 215 Q 78 215 78 195 L 78 -10 Z" fill="url(#liquid)" opacity="0.85"/>
+    <rect x="-50" y="60" width="100" height="80" fill="#0a0a0a" stroke="#c9a84c" stroke-opacity="0.6"/>
+    <text x="0" y="95" text-anchor="middle" fill="#c9a84c" font-family="Georgia, serif" font-style="italic" font-size="16" letter-spacing="2">Alma de</text>
+    <text x="0" y="120" text-anchor="middle" fill="#f5edd6" font-family="Georgia, serif" font-style="italic" font-size="22" letter-spacing="1">Jaguar</text>
+  </g>
+  <!-- Botanical particles -->
+  <g fill="#c9a84c" opacity="0.5">
+    <circle cx="120" cy="180" r="2"/>
+    <circle cx="480" cy="220" r="1.5"/>
+    <circle cx="90" cy="450" r="1.8"/>
+    <circle cx="510" cy="540" r="2.2"/>
+    <circle cx="180" cy="640" r="1.5"/>
+    <circle cx="430" cy="700" r="1.8"/>
+  </g>
+</svg>
