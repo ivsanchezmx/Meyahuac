@@ -53,9 +53,10 @@ export const metadata: Metadata = {
     locale: "es_MX",
     images: [
       {
-        url: "/images/hero-altar.jpg",
-        width: 1376,
-        height: 768,
+        url: "/images/og-image.jpg",
+        width: 1200,
+        height: 669,
+        type: "image/jpeg",
         alt: "Casa Meyahuac — altar de celebración mexicana",
       },
     ],
@@ -65,7 +66,7 @@ export const metadata: Metadata = {
     title: "Casa Meyahuac — Donde México Celebra",
     description:
       "Tres amigos. Tres espíritus. Tres regiones de México. Licores artesanales para tus momentos más importantes.",
-    images: ["/images/hero-altar.jpg"],
+    images: ["/images/og-image.jpg"],
   },
   robots: {
     index: true,
